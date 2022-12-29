@@ -47,6 +47,8 @@ class RouteServiceProvider extends ServiceProvider
                 ->namespace($this->namespace)
                 ->group(base_path('routes/web.php'));
         });
+        $router->pattern('id', '[0-9]+');
+        $router->pattern('name', '[a-zA-Z]');
     }
 
     /**

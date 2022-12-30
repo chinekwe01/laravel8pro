@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\FluentController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -27,3 +28,5 @@ Route::get('/posts/{id}', [ClientController::class, 'getPostById'])->name('posts
 Route::get('/add-post', [ClientController::class, 'addPost'])->name('posts.addpost');
 Route::get('/update-post', [ClientController::class, 'updatePost'])->name('posts.updatepost');
 Route::get('/delete-post/{id}', [ClientController::class, 'deletePost'])->name('posts.delete');
+
+Route::get('/fluent-string', [FluentController::class, 'index'])->name('fluent.index');

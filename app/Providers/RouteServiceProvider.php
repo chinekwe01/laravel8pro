@@ -49,6 +49,7 @@ class RouteServiceProvider extends ServiceProvider
         });
         Route::pattern('name', '[a-zA-Z]+');
         Route::pattern('id', '[0-9]+');
+        Route::pattern('name', '[a-zA-Z0-9]+');
     }
 
     /**

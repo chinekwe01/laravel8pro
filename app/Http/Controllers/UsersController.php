@@ -7,13 +7,11 @@ use Illuminate\Http\Request;
 class UsersController extends Controller
 {
     // Function to display all users
-    public function index(){
-        $name = 'Jennifer';
-        $users = array(
-            "name"=>"John Smith",
-            "email"=>"js@test.test",
-            "phone"=>"08123456789"
-        );
-        return view('users', compact("name", "users"));
+    public function index(Request $request)
+    {
+        // return $request->method();
+        // return $request->path();
+        // return $request->url();
+        return $request->fullUrl();
     }
 }

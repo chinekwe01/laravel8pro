@@ -19,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Route wildcard having parameter as alphabet
-Route::get('/users/{name}', function($name = null){
+Route::get('/users/{name?}', function($name = null){
     return "Welcome " . $name;
 })->where('name', '[a-zA-Z]+');
 

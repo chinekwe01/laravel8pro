@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class StudentnewController extends Controller
 {
-    public function create(){
+    public function create()
+    {
         //
     }
 }

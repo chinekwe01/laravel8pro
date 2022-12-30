@@ -19,15 +19,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // Route wildcard having parameter as alphabet
-Route::get('/users/{name?}', function($name = null){
+Route::get('/users/{name?}', function ($name = null) {
     return "Welcome " . $name;
 })->where('name', '[a-zA-Z]+');
 
 // Route wildcard having parameter as number
-Route::get('/products/{id?}', function($id = null){
+Route::get('/products/{id?}', function ($id = null) {
     return "Product is " . $id;
 })->where('id', '[0-9]+');
 
 Route::match(['get', 'post'], '/students', function (Request $req) {
-    return "Requested method is " .$req->method();
+    return "Requested method is " . $req->method();
 });

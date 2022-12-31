@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -30,3 +31,5 @@ Route::get('/update-post', [ClientController::class, 'updatePost'])->name('posts
 Route::get('/delete-post/{id}', [ClientController::class, 'deletePost'])->name('posts.delete');
 
 Route::get('/fluent-string', [FluentController::class, 'index'])->name('fluent.index');
+Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::post('/login', [LoginController::class, 'loginSubmit'])->name('login.submit');

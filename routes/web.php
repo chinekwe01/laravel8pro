@@ -7,6 +7,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +32,9 @@ Route::get('/update-post', [ClientController::class, 'updatePost'])->name('posts
 Route::get('/delete-post/{id}', [ClientController::class, 'deletePost'])->name('posts.delete');
 
 Route::get('/fluent-string', [FluentController::class, 'index'])->name('fluent.index');
-Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::get('/login', [LoginController::class, 'index'])->name('login.index')->middleware('checkuser');
 Route::post('/login', [LoginController::class, 'loginSubmit'])->name('login.submit');
+
+Route::get('/session/get', [SessionController::class, 'getSessionData'])->name('session.get');
+Route::get('/session/set', [SessionController::class, 'storeSessionData'])->name('session.store');
+Route::get('/session/remove', [SessionController::class, 'deleteSessionData'])->name('session.delete');

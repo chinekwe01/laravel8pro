@@ -11,6 +11,7 @@ use App\Http\Controllers\UploadController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PaginationController;
+use App\PaymentGateway\Payment;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,7 +74,9 @@ Route::get('/contact', function () {
 Route::get('/all-users', [PaginationController::class, 'allUsers']);
 Route::get('/upload', [UploadController::class, 'uploadForm']);
 Route::post('/upload', [UploadController::class, 'uploadFile'])->name('upload.uploadfile');
-
+Route::get('/payment', function(){
+    return Payment::process();
+});
 
 
 

@@ -2,13 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\PaginationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,3 +68,5 @@ Route::get('/about', function(){
 Route::get('/contact', function () {
     return view('contact');
 });
+
+Route::get('/all-users', [PaginationController::class, 'allUsers']);

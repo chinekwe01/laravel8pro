@@ -1,7 +1,9 @@
 <?php
 
+use App\PaymentGateway\Payment;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MailController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsersController;
@@ -11,7 +13,6 @@ use App\Http\Controllers\UploadController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PaginationController;
-use App\PaymentGateway\Payment;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,5 +79,6 @@ Route::get('/payment', function(){
     return Payment::process();
 });
 
+Route::get('/send-email', [MailController::class, 'sendEmail']);
 
 

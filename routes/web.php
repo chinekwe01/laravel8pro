@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FluentController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PaginationController;
@@ -70,3 +71,9 @@ Route::get('/contact', function () {
 });
 
 Route::get('/all-users', [PaginationController::class, 'allUsers']);
+Route::get('/upload', [UploadController::class, 'uploadForm']);
+Route::post('/upload', [UploadController::class, 'uploadFile'])->name('upload.uploadfile');
+
+
+
+
